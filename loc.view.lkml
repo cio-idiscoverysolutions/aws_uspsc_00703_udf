@@ -69,7 +69,11 @@ view: loc {
     type: number
     sql: ${TABLE}.TYPE_ID ;;
   }
-
+  dimension: location {
+    type: location
+    sql_latitude: ${gps_lat} ;;
+    sql_longitude: ${gps_lon} ;;
+  }
   measure: count {
     type: count
     drill_fields: [loc_id, name, udf.count]

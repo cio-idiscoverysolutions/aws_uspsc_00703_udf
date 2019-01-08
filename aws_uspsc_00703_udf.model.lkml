@@ -17,7 +17,26 @@ explore: anc_details {}
 explore: evt {}
 
 explore: gps {
+  join: anc_details{
+    type: left_outer
+    sql_on: ${gps.gps_id} = ${anc_details.gps_id} ;;
+    relationship: one_to_many
+    view_label: "anchor details"
 
+  }
+  join: anc{
+    type: left_outer
+    sql_on: ${anc.anc_id} = ${anc_details.anc_id} ;;
+    relationship: one_to_many
+    view_label: "anchors"
+  }
+  join: ppl{
+    type: inner
+    sql_on: ${gps.ppl_id} = ${ppl.ppl_id} ;;
+    relationship: one_to_many
+    view_label: "People"
+
+  }
 }
 
 explore: loc {}
@@ -37,7 +56,6 @@ explore: udf {
     view_label: "People"
 
   }
-
   join: obj{
     type: left_outer
     sql_on: ${udf.obj_id} = ${obj.obj_id} ;;
@@ -64,17 +82,5 @@ explore: udf {
     sql_on: ${gps.ppl_id} = ${ppl.ppl_id} ;;
     relationship: one_to_many
   }
-  join: anc_details{
-    type: left_outer
-    sql_on: ${gps.gps_id} = ${anc_details.gps_id} ;;
-    relationship: one_to_many
-    view_label: "anchor details"
 
-  }
-  join: anc{
-    type: left_outer
-    sql_on: ${anc.anc_id} = ${anc_details.anc_id} ;;
-    relationship: one_to_many
-    view_label: "anchors"
-  }
 }
