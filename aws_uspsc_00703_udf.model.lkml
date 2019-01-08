@@ -66,7 +66,7 @@ explore: udf {
   }
   join: anc_details{
     type: left_outer
-    sql_on: ${gps.gps_id} = ${anc_details.gps_id}.ppl_id} ;;
+    sql_on: ${gps.gps_id} = ${anc_details.gps_id} ;;
     relationship: one_to_many
     view_label: "anchor details"
 
