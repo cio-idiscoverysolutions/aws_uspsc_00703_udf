@@ -168,7 +168,7 @@ view: udf {
   }
  dimension: duration {
   type: number
-  sql: DATEDIFF(${date_beg_lcl_time}::date, ${date_beg_lcl_time}::date) ;;
+  sql: DATEDIFF(mi, ${date_beg_lcl_time}, ${date_beg_lcl_time}) ;;
 }
   dimension: version_status {
     type: string
