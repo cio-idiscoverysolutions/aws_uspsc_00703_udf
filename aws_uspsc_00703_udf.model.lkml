@@ -105,5 +105,19 @@ explore: udf {
     sql_on: ${gps.ppl_id} = ${ppl.ppl_id} ;;
     relationship: one_to_many
   }
-
+  join: anc_details{
+    type: left_outer
+    sql_on: ${gps.gps_id} = ${anc_details.gps_id} ;;
+    relationship: one_to_many
+  }
+  join: super_anc_details{
+    type: left_outer
+    sql_on: ${anc_details.anc_id} = ${super_anc_details.anc_id} ;;
+    relationship: one_to_many
+  }
+  join: super_anc{
+    type: left_outer
+    sql_on: ${super_anc.super_anc_id} = ${super_anc_details.super_anc_id} ;;
+    relationship: one_to_many
+  }
 }
