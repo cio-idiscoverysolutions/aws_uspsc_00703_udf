@@ -166,7 +166,10 @@ view: udf {
     type: number
     sql: ${TABLE}.VALUE ;;
   }
-
+ dimension: duration {
+  type: number
+  sql: DATEDIFF(${date_beg_lcl_time}::date, ${date_beg_lcl_time}::date) ;;
+}
   dimension: version_status {
     type: string
     sql: ${TABLE}.VERSION_STATUS ;;
