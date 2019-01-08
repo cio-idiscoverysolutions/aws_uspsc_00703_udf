@@ -12,33 +12,7 @@ view: loc {
     sql: ${TABLE}.ADDRESS ;;
   }
 
-  dimension_group: date_created {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.DATE_CREATED ;;
-  }
 
-  dimension_group: date_lastmodified {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.DATE_LASTMODIFIED ;;
-  }
 
   dimension: description {
     type: string

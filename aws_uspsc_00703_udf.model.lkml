@@ -16,6 +16,18 @@ explore: anc_details {}
 
 explore: evt {}
 
+explore: super_anc {
+  join: ppl{
+    type: inner
+    sql_on: ${super_anc.target_id} = ${ppl.ppl_id} ;;
+    relationship: one_to_many
+    view_label: "super anchors"
+
+  }
+}
+
+explore: super_anc_details {}
+
 explore: gps {
   join: anc_details{
     type: left_outer

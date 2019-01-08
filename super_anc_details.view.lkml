@@ -1,17 +1,15 @@
-view: anc_details {
-  sql_table_name: gps.ANC_DETAILS ;;
+view: super_anc_details {
+  sql_table_name: gps.SUPER_ANC_DETAILS ;;
 
   dimension: anc_id {
     type: number
-    # hidden: yes
     sql: ${TABLE}.ANC_ID ;;
   }
 
-
-  dimension: gps_id {
+  dimension: super_anc_id {
     type: number
     # hidden: yes
-    sql: ${TABLE}.GPS_ID ;;
+    sql: ${TABLE}.SUPER_ANC_ID ;;
   }
 
   dimension: target_id {
@@ -26,6 +24,6 @@ view: anc_details {
 
   measure: count {
     type: count
-    drill_fields: [anc.anc_id, anc.name, gps.pr_gps_id]
+    drill_fields: [super_anc.super_anc_id, super_anc.name]
   }
 }

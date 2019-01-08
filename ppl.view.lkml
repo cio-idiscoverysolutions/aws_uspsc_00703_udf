@@ -21,34 +21,6 @@ view: ppl {
     sql: ${TABLE}.BEG_DATE ;;
   }
 
-  dimension_group: date_created {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.DATE_CREATED ;;
-  }
-
-  dimension_group: date_lastmodified {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.DATE_LASTMODIFIED ;;
-  }
-
   dimension: day_light_savings_observed {
     type: string
     sql: ${TABLE}.DAY_LIGHT_SAVINGS_OBSERVED ;;
