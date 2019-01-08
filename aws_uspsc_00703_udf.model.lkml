@@ -18,18 +18,18 @@ explore: evt {}
 
 explore: super_anc {
   join: super_anc_details{
-    type: left_outer
+    type: inner
     sql_on: ${super_anc.super_anc_id} = ${super_anc_details.super_anc_id} ;;
     relationship: one_to_many
     view_label: "super anchor details"
 
   }join: anc{
-    type: left_outer
+    type: inner
     sql_on: ${anc.anc_id} = ${super_anc_details.anc_id} ;;
     relationship: one_to_many
     }
   join: anc_details{
-    type: left_outer
+    type: inner
     sql_on: ${anc.anc_id} = ${anc_details.anc_id} ;;
     relationship: one_to_many
   }
