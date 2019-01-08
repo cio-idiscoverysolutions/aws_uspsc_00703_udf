@@ -17,6 +17,17 @@ explore: anc_details {}
 explore: evt {}
 
 explore: super_anc {
+  join: super_anc_details{
+    type: left_outer
+    sql_on: ${super_anc.super_anc_id} = ${super_anc_details.super_anc_id} ;;
+    relationship: one_to_many
+    view_label: "anchor details"
+
+  }join: anc{
+    type: left_outer
+    sql_on: ${anc.anc_id} = ${super_anc_details.anc_id} ;;
+    relationship: one_to_many
+    }
   join: ppl{
     type: inner
     sql_on: ${super_anc.target_id} = ${ppl.ppl_id} ;;
