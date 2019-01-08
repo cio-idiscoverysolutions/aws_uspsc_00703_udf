@@ -150,7 +150,11 @@ view: gps {
     type: number
     sql: ${TABLE}.SRC_RECORD_ID ;;
   }
-
+  dimension: gps_location {
+    type: location
+    sql_latitude: ${lat} ;;
+    sql_longitude: ${lon} ;;
+  }
   measure: count {
     type: count
     drill_fields: [detail*]

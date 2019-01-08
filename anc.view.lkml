@@ -41,7 +41,11 @@ view: anc {
     type: string
     sql: ${TABLE}.TARGET_TYPE ;;
   }
-
+  dimension: anchor_location {
+    type: location
+    sql_latitude: ${lat} ;;
+    sql_longitude: ${lon} ;;
+  }
   measure: count {
     type: count
     drill_fields: [anc_id, name, anc_details.count]
