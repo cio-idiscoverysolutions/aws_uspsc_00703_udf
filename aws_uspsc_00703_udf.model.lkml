@@ -21,7 +21,7 @@ explore: super_anc {
     type: inner
     sql_on: ${super_anc.target_id} = ${ppl.ppl_id} ;;
     relationship: one_to_many
-    view_label: "super anchors"
+    view_label: "People"
 
   }
 }
