@@ -28,6 +28,11 @@ explore: super_anc {
     sql_on: ${anc.anc_id} = ${super_anc_details.anc_id} ;;
     relationship: one_to_many
     }
+  join: anc_details{
+    type: left_outer
+    sql_on: ${anc.anc_id} = ${anc_details.anc_id} ;;
+    relationship: one_to_many
+  }
   join: ppl{
     type: inner
     sql_on: ${super_anc.target_id} = ${ppl.ppl_id} ;;
